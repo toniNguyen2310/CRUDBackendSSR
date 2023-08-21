@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Comment</title>
+    <link rel="stylesheet" href="/css/homePage.css" />
+  </head>
+  <body>
+    <div>
+      <form action="/update-comment" method="post">
+        <fieldset>
+          <legend>Update Comment</legend>
+          <input
+            class="idUser"
+            type="text"
+            id="id"
+            value="<%=userEdit.id%>"
+            name="userId"
+          /><br /><br />
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            value="<%=userEdit.title%>"
+            name="title"
+          /><br /><br />
+          <label for="body">Body</label>
+          <input
+            type="text"
+            id="body"
+            value="<%=userEdit.body%>"
+            name="body"
+          /><br /><br />
+          <label for="author">Author:</label>
+          <input
+            type="text"
+            id="author"
+            value="<%=userEdit.author%>"
+            name="author"
+          /><br /><br />
+          <input type="submit" value="Update" />
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

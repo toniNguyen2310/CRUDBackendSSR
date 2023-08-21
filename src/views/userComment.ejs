@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage</title>
+    <link rel="stylesheet" href="/css/homePage.css" />
+  </head>
+  <body>
+    <div>
+      <a href="/create" class="buttonCreate">Comment</a>
+
+      <div class="table-container">
+        <h2>List Comment</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Body</th>
+              <th>Arthor</th>
+              <th>Time</th>
+              <th>Action</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% listData.forEach((data)=>{%>
+            <tr>
+              <td><%= data.title %></td>
+              <td><%= data.body %></td>
+              <td><%= data.author %></td>
+              <td><%= data.updatedAt %></td>
+              <td>
+                <a href="/update/<%= data .id %>">EDIT</a>
+              </td>
+              <td>
+                <form action="/delete-comment" method="post" class="formDelete">
+                  <input
+                    class="idUser"
+                    type="text"
+                    value="<%= data.id %>"
+                    name="userId"
+                  />
+                  <button>Delete</button>
+                </form>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
