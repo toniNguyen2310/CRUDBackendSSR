@@ -3,6 +3,7 @@ const {
   uploadSigleFile,
   uploadMultipleFiles,
 } = require("../services/fileService");
+
 const getUsersApi = async (req, res) => {
   let results = await User.find({});
 
@@ -13,12 +14,15 @@ const getUsersApi = async (req, res) => {
 };
 
 const postCreateUser = async (req, res) => {
-  let { title, body, author } = req.body;
+  let { title, body, author, name, email, city } = req.body;
 
   let user = await User.create({
     title,
     body,
     author,
+    name,
+    email,
+    city,
   });
 
   return res.status(200).json({

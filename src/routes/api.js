@@ -19,6 +19,19 @@ const {
   deleteArrayCustomer,
 } = require("../controllers/customerController");
 
+const {
+  postCreateProject,
+  getAllProject,
+  deleteProjectApi,
+  putUpdateProject,
+} = require("../controllers/projectControllers");
+
+const {
+  postCreateTask,
+  getAllTask,
+  putUpdateTask,
+  deleteTaskApi,
+} = require("../controllers/taskControllers");
 //Khai báo routes
 routerAPI.get("/users", getUsersApi);
 routerAPI.post("/users", postCreateUser);
@@ -46,5 +59,17 @@ routerAPI.get("/info/:name/:address", (req, res) => {
   console.log("req.params>>> ", req.params);
   return res.status(200).json({ data: req.params });
 });
+
+//PROJECT CRUD
+routerAPI.post("/projects", postCreateProject);
+routerAPI.get("/projects", getAllProject);
+routerAPI.put("/projects", putUpdateProject);
+routerAPI.delete("/projects", deleteProjectApi);
+
+// TASK CRUD
+routerAPI.post("/tasks", postCreateTask);
+routerAPI.get("/tasks", getAllTask);
+routerAPI.put("/tasks", putUpdateTask);
+routerAPI.delete("/tasks", deleteTaskApi);
 
 module.exports = routerAPI;
