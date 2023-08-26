@@ -1,9 +1,9 @@
 require("dotenv").config();
 const express = require("express");
-const configViewEngine = require("./config/viewEngine");
-const webRoutes = require("./routes/web");
-const apiRoutes = require("./routes/api");
-const connection = require("./config/database");
+const configViewEngine = require("./src/config/viewEngine");
+const webRoutes = require("./src/routes/web");
+const apiRoutes = require("./src/routes/api");
+const connection = require("./src/config/database");
 const app = express();
 const fileUpload = require("express-fileupload");
 const port = process.env.PORT;
