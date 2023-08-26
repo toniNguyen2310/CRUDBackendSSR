@@ -33,3 +33,5 @@ app.use("/v1/api/", apiRoutes);
     console.log("error connect to DB>>> ", error);
   }
 })();
+
+module.exports = app;
