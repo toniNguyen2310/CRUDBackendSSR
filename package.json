@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vercel/node": "^3.0.3",
     "api-query-params": "^5.4.0",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
