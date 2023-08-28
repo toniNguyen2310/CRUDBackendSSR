@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
 const mongoose_delete = require("mongoose-delete");
 const customerSchema = new mongoose.Schema(
   {

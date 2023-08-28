@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const configViewEngine = require("./src/config/viewEngine");
 const webRoutes = require("./src/routes/web");
-const apiRoutes = require("./src/routes/api");
+// const apiRoutes = require("./src/routes/api");
 const connection = require("./src/config/database");
 const app = express();
 const fileUpload = require("express-fileupload");
@@ -21,7 +21,7 @@ configViewEngine(app);
 
 //khai bao route
 app.use("/", webRoutes);
-app.use("/v1/api/", apiRoutes);
+// app.use("/v1/api/", apiRoutes);
 
 (async () => {
   try {

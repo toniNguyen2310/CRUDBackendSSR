@@ -12,7 +12,7 @@ const createProject = async (data) => {
   //ADD USERS
   if (data.type === "ADD-USERS") {
     let myProject = await Project.findById(data.projectId).exec();
-
+    console.log("myProject>>> ", myProject);
     for (let i = 0; i < data.usersArr.length; i++) {
       myProject.usersInfor.push(data.usersArr[i]);
     }
@@ -48,6 +48,7 @@ const createProject = async (data) => {
 const getProject = async (queryString) => {
   const page = queryString.page;
   const { filter, limit, population } = aqp(queryString);
+  console.log("filter>>> ", filter);
   delete filter.page;
   let offset = (page - 1) * limit;
   result = await Project.find(filter)
