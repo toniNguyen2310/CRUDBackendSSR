@@ -2,15 +2,15 @@ require("dotenv").config();
 const express = require("express");
 const configViewEngine = require("./src/config/viewEngine");
 const webRoutes = require("./src/routes/web");
-// const apiRoutes = require("./src/routes/api");
+const apiRoutes = require("./src/routes/api");
 const connection = require("./src/config/database");
 const app = express();
-// const fileUpload = require("express-fileupload");
+const fileUpload = require("express-fileupload");
 const port = process.env.PORT;
 const hostname = process.env.HOST_NAME;
 
 //config file upload
-// app.use(fileUpload());
+app.use(fileUpload());
 
 //config
 app.use(express.json());
@@ -20,8 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 configViewEngine(app);
 
 //khai bao route
-app.use("/", webRoutes);
-// app.use("/v1/api/", apiRoutes);
+app.get("/", (req, res) => {
+  res.send("test");
+});
+app.use("/v1/web/", webRoutes);
+app.use("/v1/api/", apiRoutes);
 
 (async () => {
   try {
