@@ -20,9 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 configViewEngine(app);
 
 //khai bao route
-app.get("/", (req, res) => {
-  res.send("test");
-});
+// app.get("/", (req, res) => {
+//   res.send("test");
+// });
 app.use("/v1/web/", webRoutes);
 app.use("/v1/api/", apiRoutes);
 
