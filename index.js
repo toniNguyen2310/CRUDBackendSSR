@@ -19,10 +19,10 @@ app.use(express.urlencoded({ extended: false }));
 //config
 configViewEngine(app);
 
-//khai bao route
-// app.get("/", (req, res) => {
-//   res.send("test");
-// });
+// khai bao route
+app.get("/", (req, res) => {
+  res.send("test");
+});
 app.use("/v1/web/", webRoutes);
 app.use("/v1/api/", apiRoutes);
 
